@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        /* Estilos personalizados para o Select2 */
+        .select2-container--default .select2-selection--single {
+            background-color: #1f2937 !important;
+            border: 2px solid #374151 !important;
+            border-radius: 0.5rem !important;
+            height: 3.5rem !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 3.5rem !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #ffffff !important;
+            font-size: 1rem !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-black h-screen flex items-center justify-center">
+
+    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl shadow-2xl w-96 max-w-full border border-gray-700">
+        <h1 class="text-4xl font-extrabold text-center text-transparent text-zinc-100 mb-8">
+            Conversor de Moedas
+        </h1>
+
+        <!-- Campo de Valor -->
+        <div class="mb-6">
+            <label class="block text-gray-400 text-sm font-medium mb-2">Valor:</label>
+            <input type="number" id="amount" class="w-full p-4 bg-gray-700 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition duration-300" placeholder="Digite o valor">
+        </div>
+
+        <!-- Seleção de Moeda (De) -->
+        <div class="mb-6">
+            <label class="block text-gray-400 text-sm font-medium mb-2">De:</label>
+            <select id="fromCurrency" class="w-full p-4 bg-gray-700 border-2 border-gray-600 rounded-xl text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition duration-300 select2">
+                <!-- Opções dinâmicas de moedas serão inseridas via JS -->
+            </select>
+        </div>
+
+        <!-- Seleção de Moeda (Para) -->
+        <div class="mb-6">
+            <label class="block text-gray-400 text-sm font-medium mb-2">Para:</label>
+            <select id="toCurrency" class="w-full p-4 bg-gray-700 border-2 border-gray-600 rounded-xl text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition duration-300 select2">
+                <!-- Opções dinâmicas de moedas serão inseridas via JS -->
+            </select>
+        </div>
+
+        <!-- Botão de Conversão -->
+        <button onclick="convertCurrency()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-500/50 transition duration-300 ease-in-out transform hover:scale-105 active:scale-95">
+            Converter
+        </button>
+        
+        <!-- Resultado -->
+        <p id="result" class="mt-6 text-center text-lg font-semibold text-zinc-100"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
