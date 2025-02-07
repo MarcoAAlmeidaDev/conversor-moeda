@@ -27,6 +27,7 @@ Copiar
 Editar
 cd conversor-de-moedas
 npm install
+Instale o nodeModules
 Crie um arquivo .env para armazenar sua chave da API:
 
 bash
